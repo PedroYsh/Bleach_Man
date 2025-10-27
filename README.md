@@ -1,0 +1,1 @@
+This is a distributed 2D game inspired by the classic Pac-Man, the game is themed after the anime Bleach, where the player controls Ichigo in a maze environment. Instead of ghosts, the player is chased by Hollows. The game features different enemy levels , scoring items , and a transformation power-up (energizer).
