@@ -10,7 +10,7 @@ def main():
 
     # Carrega background
     base_dir = os.path.dirname(__file__)
-    bg_path = os.path.join(base_dir, '..', 'assents', 'background.png')
+    bg_path = os.path.join(base_dir, '..', 'Assets', 'background.png')
     background = None
     if os.path.isfile(bg_path):
         try:
