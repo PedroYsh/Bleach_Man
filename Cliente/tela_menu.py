@@ -15,7 +15,7 @@ def main():
     WHITE = (255, 255, 255)
     BLACK = (0, 0, 0)
     GRAY = (150, 150, 150)
-    HIGHLIGHT_COLOR = (0, 0, 0)
+    HIGHLIGHT_COLOR = BLACK
 
     # Fonte
     try:
@@ -29,12 +29,12 @@ def main():
     # procura por background.png/jpg na mesma pasta do arquivo ou assets
     base_dir = os.path.dirname(__file__)
     candidates = [
-        os.path.join(base_dir, 'background1.png'),
-        os.path.join(base_dir, 'background1.jpg'),
-        os.path.join(base_dir, '..', 'Assets', 'background1.png'),
-        os.path.join(base_dir, '..', 'Assets', 'background1.jpg'),
-        os.path.join(base_dir, '..', 'Assets', 'background1.png'),
-        os.path.join(base_dir, '..', 'Assets', 'background1.jpg'),
+        os.path.join(base_dir, 'background2.png'),
+        os.path.join(base_dir, 'background2.jpg'),
+        os.path.join(base_dir, '..', 'Assets', 'background2.png'),
+        os.path.join(base_dir, '..', 'Assets', 'background2.jpg'),
+        os.path.join(base_dir, '..', 'Assets', 'background2.png'),
+        os.path.join(base_dir, '..', 'Assets', 'background2.jpg'),
     ]
     background_image = None
     for p in candidates:
@@ -87,7 +87,7 @@ def main():
         # Posição inicial para centralizar
         start_x = (SCREEN_WIDTH - total_width) // 2
         y_pos = SCREEN_HEIGHT // 2
-        y_pos = int(SCREEN_HEIGHT * 0.65)
+        y_pos = int(SCREEN_HEIGHT * 0.82)
 
         # Desenha cada opção
         x = start_x
@@ -113,6 +113,11 @@ def main():
                         running = False
                     elif option_text == "Ajuda":
                         print("Mostrando Ajuda...")
+                        try:
+                            import ajuda
+                            ajuda.main()
+                        except Exception as e:
+                            print("Erro ao abrir página Ajuda:", e)
                     elif option_text == "Sobre":
                         try:
                             import sobre
